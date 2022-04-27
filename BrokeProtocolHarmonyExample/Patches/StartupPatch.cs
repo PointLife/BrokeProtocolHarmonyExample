@@ -3,15 +3,15 @@ using HarmonyLib;
 
 namespace BrokeProtocolHarmonyExample.Patches
 {
-    [HarmonyPatch(typeof(SvManager))]
-    [HarmonyPatch(nameof(SvManager.StartServer))]
+    [HarmonyPatch(typeof(SceneManager))]
+    [HarmonyPatch(nameof(SceneManager.ProcessMap))]
     public static class Patch
     {
         public static void Prefix()
         {
             Core.Instance.Logger.LogWarning("----------------------------------------------------------------------");
             Core.Instance.Logger.LogWarning("Harmony Injection working!");
-            Core.Instance.Logger.LogWarning("Harmony Injection SvManager.StartServer Prefix!");
+            Core.Instance.Logger.LogWarning("Harmony Injection SceneManager.ProcessMap Prefix!");
             Core.Instance.Logger.LogWarning("----------------------------------------------------------------------");
         }
 
@@ -19,8 +19,9 @@ namespace BrokeProtocolHarmonyExample.Patches
         public static void PostfixYeah()
         {
             Core.Instance.Logger.LogWarning("----------------------------------------------------------------------");
-            Core.Instance.Logger.LogWarning("Harmony Injection SvManager.StartServer Postfix!");
+            Core.Instance.Logger.LogWarning("Harmony Injection SceneManager.ProcessMap Postfix!");
             Core.Instance.Logger.LogWarning("----------------------------------------------------------------------");
         }
+
     }
 }

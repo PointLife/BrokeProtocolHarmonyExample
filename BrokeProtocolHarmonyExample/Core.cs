@@ -16,7 +16,7 @@ namespace BrokeProtocolHarmonyExample
 
         public Core()
         {
-
+            Instance = this;
             Info = new PluginInfo("HarmonyExample", "harmonyexample")
             {
                 Description = "Harmony Example Plugin"
